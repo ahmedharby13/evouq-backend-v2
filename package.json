@@ -1,13 +1,14 @@
 {
     "name": "backend",
     "version": "1.0.0",
-    "main": "server.js",
+    "main": "dist/server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "server": "nodemon server.ts --exec ts-node",
         "dev": "nodemon server.ts --exec ts-node",
         "start": "node dist/server.js",
-        "build": "tsc"
+        "build": "tsc",
+        "build:start": "npm run build && npm start"
     },
     "keywords": [],
     "author": "",
@@ -31,6 +32,7 @@
         "@types/passport-google-oauth20": "^2.0.16",
         "@types/validator": "^13.15.0",
         "@types/zxcvbn": "^4.4.5",
+        "@vercel/node": "^5.3.6",
         "nodemon": "^3.1.9",
         "ts-node": "^10.9.2",
         "typescript": "^5.8.3"
