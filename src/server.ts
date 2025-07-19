@@ -32,18 +32,11 @@ if (corsOrigins.length === 0) {
 
 app.use(
   cors({
-    origin: (origin, callback) => {
-      if (!origin || corsOrigins.includes(origin)) {
-        callback(null, origin || '*');
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-CSRF-Token'],
+    origin: true,
     credentials: true,
   })
 );
+
 
 app.use(express.json());
 app.use(cookieParser());
